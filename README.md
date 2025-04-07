@@ -21,6 +21,10 @@ docker build -t cargo-management .
 ```bash
 docker run -p 8000:8000 cargo-management
 ```
+```bash
+docker build -t cargo-management .
+docker run -p 8000:8000 cargo-management
+```
 
 ### 4. Access the API
 Visit [http://localhost:8000](http://localhost:8000) in your browser.
