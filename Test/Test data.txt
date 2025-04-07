@@ -1,0 +1,47 @@
+[
+  {
+    "id": "item001",
+    "name": "Oxygen Cylinder",
+    "width": 10,
+    "depth": 10,
+    "height": 30,
+    "mass": 5,
+    "priority": 90,
+    "expiry_date": "2025-06-01",
+    "usage_limit": 50,
+    "preferred_zone": "Airlock",
+    "current_zone": "Airlock",
+    "usage_count": 0,
+    "added_date": "2025-03-19T16:10:24.831460"
+  },
+  {
+    "id": "item002",
+    "name": "Laptop",
+    "width": 15,
+    "depth": 20,
+    "height": 5,
+    "mass": 2,
+    "priority": 60,
+    "expiry_date": null,
+    "usage_limit": null,
+    "preferred_zone": "Laboratory",
+    "current_zone": "Laboratory",
+    "usage_count": 0,
+    "added_date": "2025-03-19T16:10:24.831460"
+  },
+  {
+    "id": "item003",
+    "name": "Medical Kit",
+    "width": 8,
+    "depth": 8,
+    "height": 8,
+    "mass": 4,
+    "priority": 95,
+    "expiry_date": "2025-03-15",
+    "usage_limit": 20,
+    "preferred_zone": "Airlock",
+    "current_zone": "Airlock",
+    "usage_count": 0,
+    "added_date": "2025-03-19T16:10:24.831460"
+  }
+]
