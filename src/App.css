@@ -1,0 +1,242 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Space-themed animations and effects */
+.cosmic-glow {
+  box-shadow: 0 0 15px 5px rgba(124, 58, 237, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.cosmic-glow:hover {
+  box-shadow: 0 0 25px 8px rgba(124, 58, 237, 0.7);
+}
+
+.space-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.space-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Cosmic dust particles effect */
+.cosmic-dust {
+  position: relative;
+}
+
+.cosmic-dust::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 10px),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8px),
+    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 12px),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 6px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* Space-card glass effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Neon buttons */
+.neon-button {
+  position: relative;
+  color: rgba(124, 58, 237, 1);
+  background: transparent;
+  border: 2px solid rgba(124, 58, 237, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+}
+
+.neon-button:hover {
+  color: white;
+  background: rgba(124, 58, 237, 1);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.8);
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(124, 58, 237, 0.5);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.neon-button:hover::before {
+  width: 100%;
+}
+
+/* Star field background */
+.star-field {
+  position: relative;
+}
+
+.star-field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 25px 5px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 50px 25px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 125px 20px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 50px 75px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 175px 125px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.3;
+  z-index: -1;
+  animation: twinkle 8s ease-in-out infinite;
+}
+
+/* Animated button for special actions */
+.cosmic-button {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cosmic-button:hover {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.8);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cosmic-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+/* Text cosmic gradient effect */
+.cosmic-text {
+  background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animate list items */
+.cosmic-list > * {
+  transition: all 0.3s ease;
+}
+
+.cosmic-list > *:hover {
+  transform: translateX(5px);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* Original app styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

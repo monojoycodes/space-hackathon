@@ -1,0 +1,6 @@
+
+# This is just to ensure the scripts directory exists
+# Your package.json should have the following scripts:
+# "dev": "vite",
+# "build": "tsc && vite build",
+# "preview": "vite preview"

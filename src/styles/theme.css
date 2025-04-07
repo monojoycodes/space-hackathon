@@ -1,0 +1,110 @@
+
+/* Theme styles for improved text visibility */
+
+/* Dark theme */
+.theme-dark .space-card,
+.theme-dark .bg-space-dark-blue,
+.theme-dark .bg-space-darker-blue {
+  color: #eee !important;
+}
+
+.theme-dark .text-gray-400 {
+  color: #aaadb0 !important;
+}
+
+.theme-dark .card-title,
+.theme-dark h1, 
+.theme-dark h2, 
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: #ffffff !important;
+}
+
+.theme-dark input,
+.theme-dark select,
+.theme-dark textarea {
+  color: #ffffff !important;
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.theme-dark input::placeholder {
+  color: #9F9EA1 !important;
+}
+
+/* Light theme */
+.theme-light .space-card,
+.theme-light .bg-space-dark-blue,
+.theme-light .bg-space-darker-blue {
+  color: #222222 !important;
+}
+
+.theme-light .text-gray-400 {
+  color: #555555 !important;
+}
+
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  color: #222222 !important;
+}
+
+.theme-light input::placeholder {
+  color: #8A898C !important;
+}
+
+/* Universal styles for forms */
+input, select, textarea {
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Priority and status colors */
+.priority-high {
+  color: #ef4444 !important;
+}
+
+.priority-medium {
+  color: #f59e0b !important;
+}
+
+.priority-low {
+  color: #10b981 !important;
+}
+
+.status-stored {
+  color: #10b981 !important;
+}
+
+.status-in-transit {
+  color: #f59e0b !important;
+}
+
+.status-waste {
+  color: #ef4444 !important;
+}
+
+/* Improve card visibility */
+.space-card, 
+.bg-space-dark-blue, 
+.bg-space-darker-blue {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.theme-dark .space-card, 
+.theme-dark .bg-space-dark-blue {
+  background-color: rgba(30, 41, 59, 0.7) !important;
+}
+
+.theme-dark .bg-space-darker-blue {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+}
+
+.theme-light .space-card, 
+.theme-light .bg-space-dark-blue {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.theme-light .bg-space-darker-blue {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}

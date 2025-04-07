@@ -1,0 +1,371 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+  
+  /* Dynamic background stars for the whole app */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(1px 1px at 25px 5px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0)),
+                      radial-gradient(1px 1px at 50px 25px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0)),
+                      radial-gradient(1px 1px at 125px 20px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0)),
+                      radial-gradient(1.5px 1.5px at 50px 75px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0)),
+                      radial-gradient(2px 2px at 175px 125px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0)),
+                      radial-gradient(2.5px 2.5px at 150px 150px, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  
+  .dark body::before {
+    opacity: 0.8;
+  }
+}
+
+/* Custom font family definitions */
+@layer base {
+  :root {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+/* Additional animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes spin-reverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(500px);
+    opacity: 0;
+  }
+}
+
+@keyframes nebula {
+  0%, 100% {
+    opacity: 0.3;
+    box-shadow: 0 0 30px 10px rgba(138, 43, 226, 0.4);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 40px 15px rgba(138, 43, 226, 0.6);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 3s linear infinite;
+}
+
+.animate-nebula {
+  animation: nebula 8s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Glass card effect */
+.space-card {
+  @apply bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm rounded-lg border border-gray-200/50 dark:border-gray-700/50 shadow transition-all duration-300;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.space-card:hover {
+  @apply border-blue-500/30 dark:border-blue-400/30;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Hover effects */
+.hover-scale {
+  @apply transition-transform duration-300;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+}
+
+/* Button animations */
+.action-button {
+  @apply font-medium px-4 py-2 rounded-md transition-all duration-300 relative overflow-hidden;
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.action-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Priority colors */
+.priority-high {
+  @apply text-space-red relative;
+}
+
+.priority-high::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-space-red transform scale-x-0 origin-bottom-right transition-transform duration-300;
+}
+
+.priority-high:hover::after {
+  @apply transform scale-x-100 origin-bottom-left;
+}
+
+.priority-medium {
+  @apply text-space-yellow relative;
+}
+
+.priority-medium::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-space-yellow transform scale-x-0 origin-bottom-right transition-transform duration-300;
+}
+
+.priority-medium:hover::after {
+  @apply transform scale-x-100 origin-bottom-left;
+}
+
+.priority-low {
+  @apply text-space-green relative;
+}
+
+.priority-low::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-space-green transform scale-x-0 origin-bottom-right transition-transform duration-300;
+}
+
+.priority-low:hover::after {
+  @apply transform scale-x-100 origin-bottom-left;
+}
+
+/* Status colors with enhanced effects */
+.status-stored {
+  @apply text-space-green relative;
+}
+
+.status-waste {
+  @apply text-space-red relative;
+}
+
+.status-transit {
+  @apply text-space-blue relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-space-blue/50;
+  animation: transitPulse 2s infinite;
+}
+
+@keyframes transitPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Mobile responsive classes */
+@layer utilities {
+  .mobile-container {
+    @apply px-4 py-2 sm:p-6 md:p-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-heading {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .mobile-button {
+    @apply px-3 py-1.5 sm:px-4 sm:py-2;
+  }
+}
